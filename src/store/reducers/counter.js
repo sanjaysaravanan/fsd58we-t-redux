@@ -6,7 +6,7 @@ const countReducer = (state = initialState, action) => {
   switch (action.type) {
     case "count_inc":
       return {
-        ...state,
+        ...state, // preserve other existing state variables
         count: state.count + 1,
       };
     case "count_dec":
@@ -20,12 +20,6 @@ const countReducer = (state = initialState, action) => {
       return {
         ...state,
         count: state.count + action.number,
-      };
-    /* Just for task Reference */
-    case "product_add_to_cart":
-      return {
-        ...state,
-        products: [...state.products, action.product],
       };
     default:
       return state;
